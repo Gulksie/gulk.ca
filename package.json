@@ -1,0 +1,13 @@
+{
+  "name": "gulk.ca",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "@mdit/plugin-katex": "^0.25.2",
+    "luxon": "^3.7.2",
+    "markdown-it": "^14.2.0"
+  }
+}

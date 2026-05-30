@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+title: Blog post
+date: 2026-01-01
+---
+<main>
+    <h1>{{ title }} - {{ date | prettyDate}}</h1>
+
+    {{ content | safe }}
+</main>
