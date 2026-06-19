@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "dependencies": {
-    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy": "^3.1.6",
     "@mdit/plugin-katex": "^0.25.2",
     "luxon": "^3.7.2",
     "markdown-it": "^14.2.0"
