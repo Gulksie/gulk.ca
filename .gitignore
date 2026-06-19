@@ -150,3 +150,4 @@ vite.config.ts.timestamp-*
 # my bullshit??
 # we dont need to commit the rendered site files
 _site
+.cache
