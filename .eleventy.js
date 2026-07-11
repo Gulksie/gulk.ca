@@ -6,14 +6,21 @@ export default async function(eleventyConfig) {
 
 	eleventyConfig.addPassthroughCopy("src/img");
 	eleventyConfig.addPassthroughCopy("src/css");
-
-	eleventyConfig.addFilter("prettyDate", (dateObj) => {
-    	return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_FULL);
-  	});
+	eleventyConfig.addPassthroughCopy("src/js");
 
 	//LaTeX integration taken largely from https://bkardell.com/blog/11tyMath.html
+	let options = {
+		html: true,
+		breaks: true,
+		linkify: true,
+	};
+
 	const { katex } = await import("@mdit/plugin-katex");
 
-	const mdLib = markdownit().use(katex, { output: "mathml" });
+	const mdLib = markdownit(options).use(katex, { output: "mathml" });
 	eleventyConfig.setLibrary("md", mdLib);
+};
+
+export const config = {
+	markdownTemplateEngine: "njk",
 };

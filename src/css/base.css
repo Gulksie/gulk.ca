@@ -21,7 +21,12 @@ a:visited {
     background-color: #690000;
 }
 
-.header {
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+header {
     background-color: #420000;
 
     display: flex;
@@ -41,5 +46,13 @@ a:visited {
 
 .lineBreak {
     width: 100%;
-    border-top: 3px solid black;
+    border-top: 1px solid black;
+}
+
+footer {
+    text-align: center;
+}
+
+main {
+    padding: 0 5% 0 5%;
 }

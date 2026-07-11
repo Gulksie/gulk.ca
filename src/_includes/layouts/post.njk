@@ -2,9 +2,22 @@
 layout: layouts/base.njk
 title: Blog post
 date: 2026-01-01
+
+pageStyles: post.css
+
+description: I forgor to write a description
+author: Kayla Gulka
 ---
 <main>
-    <h1>{{ title }} - {{ date | prettyDate}}</h1>
+    <div id="titleblock">
+        <h1>{{ title }}</h1>
+        <p>{{ date.toDateString()}} <br> {{ author }}</p>
+
+        {% if thumbnail %}
+            <img src="/img/{{ thumbnail }}" alt="{{ thumnailAlt }}">
+        {% endif %}
+    </div>
+
 
     {{ content | safe }}
 </main>

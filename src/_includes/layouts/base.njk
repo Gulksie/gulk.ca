@@ -1,6 +1,8 @@
 ---
 title: "Kayla's Blog thingy"
 date: "Last Modified"
+
+hasLatex: false
 ---
 
 <!doctype html>
@@ -19,20 +21,43 @@ date: "Last Modified"
     {% if pageStyles %}
       <link rel="stylesheet" href="/css/{{ pageStyles }}">
     {% endif %}
-    <!-- link math fonts to make latex pretty -->
-    <link rel="stylesheet" href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css"/>
+
+    {% if pageJS %}
+      <script src="/js/{{ pageJS }}" defer></script>
+    {% endif %}
+
+    {% if hasLatex %}
+      <!-- link math fonts to make latex pretty -->
+      <link rel="stylesheet" href="https://fred-wang.github.io/MathFonts/LatinModern/mathfonts.css"/>
+    {% endif %}
 
     <title>{{ title }}</title>
   </head>
   <body>
 
-    <div class="header">
-        <img src="/img/gulk.png" alt="Pixel art of me kinda">
-        <h1>Kayla's blog thingy</h1>
-        <h2><nav><a href="/">Home</a><span class="headerDivider"> | </span><a href="/posts/">Blog</a></nav></h2>
-    </div>
+    <header>
+      <img src="/img/gulk.png" alt="Pixel art of me kinda">
+      <h1>Kayla's website thingy</h1>
+      <h2><nav><a href="/">Home</a><span class="headerDivider"> | </span><a href="/posts/">Blog</a></nav></h2>
+    </header>
+
     <div class="lineBreak"></div>
 
-    {{ content | safe }}
+    <main>
+      {{ content | safe }}
+    </main>
+
+    <div class="lineBreak"></div>
+    <footer>
+      <p><nav>
+        <a href="mailto:kayla@gulka.ca">Email</a> | 
+        <a href="mailto:mikaela@gulka.ca">"Professional" email</a> | 
+        <a href="https://www.instagram.com/mi.gulka/">Instagram</a> |
+        <a href="https://letterboxd.com/gulksie/">Letterboxd</a> |
+        <a href="https://www.last.fm/user/gulksie">Last.fm</a> |
+        <a href="https://steamcommunity.com/id/gulksie/">Steam</a> |
+        I don't have many interesting socials :(
+      </nav></p>
+    </footer>
   </body>
 </html>
