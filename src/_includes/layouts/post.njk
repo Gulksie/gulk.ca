@@ -8,16 +8,24 @@ pageStyles: post.css
 description: I forgor to write a description
 author: Kayla Gulka
 ---
-<main>
-    <div id="titleblock">
-        <h1>{{ title }}</h1>
-        <p>{{ date.toDateString()}} <br> {{ author }}</p>
-
-        {% if thumbnail %}
-            <img src="/img/{{ thumbnail }}" alt="{{ thumnailAlt }}">
+<div id="titleblock">
+    <h1>{{ title }}</h1>
+    <p>By {{ author }} | {{ date.toDateString()}}</p>
+    <p><strong>Tags:</strong>
+    {% for tag in tags %}
+        {% if tag != "posts" %}
+            {% if loop.last %}
+                {{ tag }}
+            {% else %}
+                {{ tag }},
+            {% endif %}
         {% endif %}
-    </div>
+    {% endfor %}
+    </p>
 
+    {% if thumbnail %}
+        <img src="/img/{{ thumbnail }}" alt="{{ thumnailAlt }}">
+    {% endif %}
+</div>
 
-    {{ content | safe }}
-</main>
+{{ content | safe }}

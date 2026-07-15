@@ -1,0 +1,11 @@
+---
+permalink: /randomPost.html
+---
+<!-- Somehow having this as its own dedicated page was the easiest way to make the back button work properly -->
+
+<script>
+    const posts = [{% for post in collections.posts %}"{{ post.url }}"{% if not loop.last %},{% endif %}{% endfor %}];
+
+    window.location.assign(posts[Math.floor(Math.random() * posts.length)]);
+</script>
+
