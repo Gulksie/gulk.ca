@@ -3,7 +3,7 @@ layout: layouts/base.njk
 title: Blog post
 date: 2026-01-01
 
-pageStyles: post.css
+pageStyles: [post.css]
 
 description: I forgor to write a description
 author: Kayla Gulka
@@ -15,9 +15,9 @@ author: Kayla Gulka
     {% for tag in tags %}
         {% if tag != "posts" %}
             {% if loop.last %}
-                {{ tag }}
+                <a href="/posts/?tag={{ tag }}">{{ tag }}</a>
             {% else %}
-                {{ tag }},
+                <a href="/posts/?tag={{ tag }}">{{ tag }}</a>,
             {% endif %}
         {% endif %}
     {% endfor %}

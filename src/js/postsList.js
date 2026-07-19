@@ -21,6 +21,19 @@ for (const tag of tags) {
     tagsList.appendChild(btn);
 }
 
+// grab filters from url, if any
+const searchParams = new URLSearchParams(window.location.search);
+if (searchParams.has("tag")) {
+    let tag = searchParams.get("tag");
+
+    // filter by tag if it exists, otherwise do nothing
+    if (tags.includes(tag)) {
+        filteredTags.push(tag);
+        document.getElementById(tag + "Button").classList.add("clicked");
+        updatePostsFromFilter();
+    }
+}
+
 function tagButtonClicked(e) {
     let clickedBtn = e.target;
     let tag = clickedBtn.id.slice(0, -6);
@@ -36,6 +49,10 @@ function tagButtonClicked(e) {
     }
 
     // now change visibility of each element according to filters
+    updatePostsFromFilter();
+}
+
+function updatePostsFromFilter() {
     if (filteredTags.length == 0) {
         for (const child of postsList.children) {
             child.style.display = "";  // reset display and (hopefully?) inherit from parent again

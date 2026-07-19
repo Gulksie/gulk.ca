@@ -2,8 +2,8 @@
 layout: layouts/base.njk
 title: Kayla's Blog Thingy
 
-pageStyles: postsList.css
-pageJS: postsList.js
+pageStyles: [postsList.css]
+pageJS: [postsList.js]
 ---
 <h1>Blog posts <a href="/feed.xml"><img src="/img/feedIcon.svg" alt="atom feed icon and link"></a></h1>
 
@@ -19,9 +19,9 @@ pageJS: postsList.js
             {% for tag in post.data.tags %}
                 {% if tag != "posts" %}
                     {% if loop.last %}
-                        {{ tag }}
+                        <a href="/posts/?tag={{ tag }}">{{ tag }}</a>
                     {% else %}
-                        {{ tag }}, 
+                        <a href="/posts/?tag={{ tag }}">{{ tag }}</a>,
                     {% endif %}
                 {% endif %}
             {% endfor %}

@@ -11,6 +11,10 @@ hasLatex: false
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    {% if description %}
+      <meta name="description" content="{{ description }}">
+    {% endif %}
+
     <link rel="icon" type="image/png" href="/img/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg" />
     <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
@@ -18,13 +22,13 @@ hasLatex: false
     <link rel="manifest" href="/img/favicon/site.webmanifest" />
 
     <link rel="stylesheet" href="/css/base.css">
-    {% if pageStyles %}
-      <link rel="stylesheet" href="/css/{{ pageStyles }}">
-    {% endif %}
+    {% for css in pageStyles %}
+      <link rel="stylesheet" href="/css/{{ css }}">
+    {% endfor %}
 
-    {% if pageJS %}
-      <script src="/js/{{ pageJS }}" defer></script>
-    {% endif %}
+    {% for js in pageJS %}
+      <script src="/js/{{ js }}" defer></script>
+    {% endfor %}
 
     {% if hasLatex %}
       <!-- link math fonts to make latex pretty -->

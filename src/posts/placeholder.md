@@ -4,7 +4,7 @@ title: First post until I write something for real
 tags: [posts, testing, tag1, tag2]
 date: 2026-07-11
 description: Placeholder blog post until I actually write one
-thumbnail: posts/placeholder/max.jpg
+thumbnail: posts/placeholder/max.webp
 thumnailAlt: Thumbnail; A picture of Max the dog
 ---
 

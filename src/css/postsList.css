@@ -33,14 +33,16 @@ h1 img {
     margin-left: 0;
 }
 
-#tagsList button:hover {
-    background-color: #ffec7d;
-}
-
 #tagsList button.clicked {
     background-color: #c4a700 ;
 }
 
-#tagsList button.clicked:hover {
-    background-color: #c2b35f;
+@media (hover: hover) {
+    #tagsList button:hover {
+        background-color: #ffec7d;
+    }
+    
+    #tagsList button.clicked:hover {
+        background-color: #c2b35f;
+    }
 }
